@@ -1,25 +1,26 @@
-
 import React from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.nav`
-
-  width: 100%;
-  padding: 10px;
-`;
-
-const List = styled.ul`
-  list-style: none;
+const StyledMenuBar = styled.div`
   display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ff8c00;
+  color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+  z-index: 1;
 `;
 
-const Item = styled.li`
-  margin: 0 15px;
-  font-size: 1.2em;
+const MenuItems = styled.div`
+  display: flex;
+  gap: 20px;
+`;
+
+const MenuItem = styled.a`
+  text-decoration: none;
   color: #fff;
+  font-weight: bold;
   cursor: pointer;
 
   &:hover {
@@ -27,16 +28,34 @@ const Item = styled.li`
   }
 `;
 
+const AuthLinks = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+`;
+
+const SearchButton = styled.button`
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+`;
 
 const MenuBar: React.FC = () => {
   return (
-    <Wrapper>
-      <List>
-        <Item>Home</Item>
-        <Item>About</Item>
-        <Item>Contact</Item>
-      </List>
-    </Wrapper>
+    <StyledMenuBar>
+      <MenuItems>
+        <MenuItem href="#">Home</MenuItem>
+        <MenuItem href="#">About</MenuItem>
+        <MenuItem href="#">Contact</MenuItem>
+      </MenuItems>
+      <AuthLinks>
+        <MenuItem href="#">Login</MenuItem>
+        <MenuItem href="#">Sign Up</MenuItem>
+        <SearchButton>Search</SearchButton>
+      </AuthLinks>
+    </StyledMenuBar>
   );
 };
 
