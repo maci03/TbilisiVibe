@@ -3,10 +3,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.nav`
-  background-color: #c7a17a;
+
   width: 100%;
   padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
 
 const List = styled.ul`
@@ -27,6 +26,7 @@ const Item = styled.li`
     text-decoration: underline;
   }
 `;
+
 
 const MenuBar: React.FC = () => {
   return (
